@@ -1,0 +1,51 @@
+import semillas.*
+import parcelas.*
+
+describe "semillas" {
+	var mentita1 = new Menta()
+	var mentita2 = new Menta()
+	var soja1 = new Soja()
+	var quinoa1 = new Quinoa()
+	var quinoa2 = new Quinoa()
+	
+	fixture {
+		mentita1.anioDeObtencion(2005)
+		mentita1.altura(1)
+		mentita1.cuantasHorasDeSolTolera()
+		mentita1.espacioQueOcupa()
+		
+		mentita2.anioDeObtencion(2007)
+		mentita2.altura(0.3)
+		mentita2.cuantasHorasDeSolTolera()
+		mentita2.espacioQueOcupa()
+		
+		soja1.anioDeObtencion(2009)
+		soja1.altura(0.6)
+		soja1.cuantasHorasDeSolTolera()
+		
+		quinoa1.cuantasHorasDeSolTolera(12)
+		quinoa1.anioDeObtencion(2010)
+		
+		quinoa2.cuantasHorasDeSolTolera(9)
+		quinoa2.anioDeObtencion(2001)
+	}
+	test "mentita1 y 2 esFuerte , daSemillas , espacioQueOcupa" {
+		assert.notThat(mentita1.esFuerte())
+		assert.that(mentita1.daSemillas())
+		assert.equals(3,mentita1.espacioQueOcupa())
+		
+		assert.notThat(mentita2.esFuerte())
+		assert.notThat(mentita2.daSemillas())
+		assert.equals(0.9,mentita2.espacioQueOcupa())
+	}
+	test "soja 1 tolerancia, daSemillas, espacioQueOcupa" {
+		assert.equals(7, soja1.cuantasHorasDeSolTolera())
+		assert.notThat(soja1.daSemillas())
+		assert.equals(0.3, soja1.espacioQueOcupa())
+	}
+	
+	test "quinoa 1 y quinoa2 daSemillas" {
+		assert.that(quinoa1.daSemillas())
+		assert.that(quinoa2.daSemillas())
+	}
+}

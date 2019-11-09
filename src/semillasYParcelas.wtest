@@ -2,33 +2,13 @@ import semillas.*
 import parcelas.*
 
 describe "semillas" {
-	var mentita1 = new Menta()
-	var mentita2 = new Menta()
-	var soja1 = new Soja()
-	var quinoa1 = new Quinoa()
-	var quinoa2 = new Quinoa()
+	var mentita1 = new Menta(anioDeObtencion = 2005, altura = 1, cuantasHorasDeSolTolera = 6, esFuerte = false, daSemillas = true, espacioQueOcupa = 3)
+	var mentita2 = new Menta(anioDeObtencion = 2007, altura = 0.3,cuantasHorasDeSolTolera = 6, esFuerte = false, daSemillas = false, espacioQueOcupa = 0.9)
+	var soja1 = new Soja(anioDeObtencion = 2009, altura = 0.6,cuantasHorasDeSolTolera= 7, esFuerte = false, daSemillas = false,espacioQueOcupa = 0.3)
+	var quinoa1 = new Quinoa(anioDeObtencion = 2010, altura = 1,cuantasHorasDeSolTolera= 12, esFuerte = true, daSemillas = true,espacioQueOcupa = 0.5)
+	var quinoa2 = new Quinoa(anioDeObtencion = 2001, altura = 0.6,cuantasHorasDeSolTolera= 9, esFuerte = false, daSemillas = true,espacioQueOcupa = 0.5)
 	
-	fixture {
-		mentita1.anioDeObtencion(2005)
-		mentita1.altura(1)
-		mentita1.cuantasHorasDeSolTolera()
-		mentita1.espacioQueOcupa()
-		
-		mentita2.anioDeObtencion(2007)
-		mentita2.altura(0.3)
-		mentita2.cuantasHorasDeSolTolera()
-		mentita2.espacioQueOcupa()
-		
-		soja1.anioDeObtencion(2009)
-		soja1.altura(0.6)
-		soja1.cuantasHorasDeSolTolera()
-		
-		quinoa1.cuantasHorasDeSolTolera(12)
-		quinoa1.anioDeObtencion(2010)
-		
-		quinoa2.cuantasHorasDeSolTolera(9)
-		quinoa2.anioDeObtencion(2001)
-	}
+	
 	test "mentita1 y 2 esFuerte , daSemillas , espacioQueOcupa" {
 		assert.notThat(mentita1.esFuerte())
 		assert.that(mentita1.daSemillas())

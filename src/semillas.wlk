@@ -3,18 +3,18 @@ import parcelas.*
 class Planta{
 	const property anioDeObtencion //num
 	var property altura //num
-	var property cuantasHorasDeSolTolera //num
-	var property esFuerte //boolean
-	var property daSemillas //boolean
-	var property espacioQueOcupa //num
+	
+	method cuantasHorasDeSolTolera()
 	
 	method esFuerte(){
-		return cuantasHorasDeSolTolera > 10
+		return (self.cuantasHorasDeSolTolera() > 10)
 	}
 	
 	method daSemillas(){
 		return self.esFuerte()
 	}
+	method espacioQueOcupa()
+	
 	method esIdeal(unaParcela)
 } 
 
@@ -62,9 +62,8 @@ class Soja inherits Planta{
 }
 
 class Quinoa inherits Planta{
-	override method cuantasHorasDeSolTolera(horas){
-		cuantasHorasDeSolTolera = horas
-	}
+	var property cuantasHorasDeSolTolera
+	
 	override method espacioQueOcupa(){
 		return 0.5
 	}

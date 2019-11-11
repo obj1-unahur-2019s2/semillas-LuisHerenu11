@@ -13,14 +13,6 @@ describe "semillas y parcelas" {
 	fixture {
 		quinoa1.espacioQueOcupa(0.5)
 		quinoa2.espacioQueOcupa(0.5)
-		plantacion1.ancho(20) 
-		plantacion1.largo(1)
-		plantacion1.horasDeSol(8)
-		plantacion1.cantidadDePlantasAsociadas(0)
-		plantacion1.plantar(mentita1)
-		plantacion1.seAsociaBien(mentita1)
-		
-		
 	}
 	test "mentita1 y 2 daSemillas , espacioQueOcupa" {
 		
